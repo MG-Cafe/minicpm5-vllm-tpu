@@ -1,0 +1,4 @@
+Metadata-Version: 2.1
+Name: minicpm5-mk
+Version: 0.1.0
+Summary: MiniCPM5 JAX/Pallas megakernel model for vLLM-TorchTPU (out-of-tree vLLM plugin)

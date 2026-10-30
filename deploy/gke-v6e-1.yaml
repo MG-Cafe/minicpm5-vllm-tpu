@@ -1,0 +1,36 @@
+# Single-chip TPU v6e pod running the public vLLM-TorchTPU image used for every published number.
+#   kubectl apply -f deploy/gke-v6e-1.yaml
+#   kubectl exec -it minicpm5-v6e-1 -- bash      # then follow README "Step 3 — Install the plugin"
+#   kubectl delete pod minicpm5-v6e-1             # when done
+apiVersion: v1
+kind: Pod
+metadata:
+  name: minicpm5-v6e-1
+spec:
+  restartPolicy: Never
+  nodeSelector:
+    cloud.google.com/gke-tpu-accelerator: tpu-v6e-slice
+    cloud.google.com/gke-tpu-topology: 1x1
+  tolerations:
+  - key: google.com/tpu
+    operator: Equal
+    value: present
+    effect: NoSchedule
+  containers:
+  - name: runner
+    image: vllm/vllm-torchtpu:nightly-20261027-e91801a-v0.32.0
+    command: ["bash", "-lc", "sleep infinity"]
+    env:
+    - name: HF_HOME
+      value: /dev/shm/hf_cache
+    resources:
+      limits:
+        google.com/tpu: 1
+    volumeMounts:
+    - name: dshm
+      mountPath: /dev/shm
+  volumes:
+  - name: dshm
+    emptyDir:
+      medium: Memory
+      sizeLimit: 64Gi

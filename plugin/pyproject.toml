@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minicpm5_mk"
+version = "0.1.0"
+description = "vLLM-TorchTPU Pallas/JAX Megakernel & SuperAttention plugin for MiniCPM5-1B and MiniCPM5-2B"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["minicpm5_mk*"]
+
+[project.entry-points."vllm.general_plugins"]
+minicpm5_mk = "minicpm5_mk:register"

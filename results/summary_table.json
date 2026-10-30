@@ -1,0 +1,389 @@
+{
+  "reference_image": "vllm/vllm-torchtpu:nightly-20261027-e91801a-v0.32.0",
+  "models": {
+    "MiniCPM5-1B": {
+      "model_id": "openbmb/MiniCPM5-1B",
+      "v6e_accuracy": {
+        "fp32_golden": {
+          "gate_v2": "PASS",
+          "top1_agreement": 1.0,
+          "top1_agreement_nolp": 1.0,
+          "top1_tie_aware": 1.0,
+          "top1_tie_aware_nolp": 1.0,
+          "mean_abs_dlogprob": 0.04813,
+          "kl_top20_mean": 0.001183,
+          "cos_logprob_mean": 0.999969,
+          "n_seqs": 17,
+          "shapes": [
+            "(1,8192)",
+            "(4,8192)",
+            "(8,8192)",
+            "(16,8192)",
+            "(32,8192)"
+          ],
+          "batch_invariance": {
+            "8x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "16x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "32x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            }
+          }
+        },
+        "bf16_reference": {
+          "gate_v2": "PASS",
+          "top1_agreement": 1.0,
+          "top1_agreement_nolp": 1.0,
+          "top1_tie_aware": 1.0,
+          "top1_tie_aware_nolp": 1.0,
+          "mean_abs_dlogprob": 0.05285,
+          "kl_top20_mean": 0.001377,
+          "cos_logprob_mean": 0.999963,
+          "n_seqs": 17,
+          "shapes": [
+            "(1,8192)",
+            "(4,8192)",
+            "(8,8192)",
+            "(16,8192)",
+            "(32,8192)"
+          ],
+          "batch_invariance": {
+            "8x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "16x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "32x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            }
+          }
+        }
+      },
+      "tpu7x_accuracy": {
+        "fp32_golden": {
+          "gate_v2": "PASS",
+          "top1_agreement": 1.0,
+          "top1_agreement_nolp": 1.0,
+          "top1_tie_aware": 1.0,
+          "top1_tie_aware_nolp": 1.0,
+          "mean_abs_dlogprob": 0.05075,
+          "kl_top20_mean": 0.001136,
+          "cos_logprob_mean": 0.999968,
+          "n_seqs": 17,
+          "shapes": [
+            "(1,8192)",
+            "(4,8192)",
+            "(8,8192)",
+            "(16,8192)",
+            "(32,8192)"
+          ],
+          "batch_invariance": {
+            "8x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.09709
+            },
+            "16x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.09709
+            },
+            "32x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.09709
+            }
+          }
+        },
+        "bf16_reference": {
+          "gate_v2": "PASS",
+          "top1_agreement": 1.0,
+          "top1_agreement_nolp": 1.0,
+          "top1_tie_aware": 1.0,
+          "top1_tie_aware_nolp": 1.0,
+          "mean_abs_dlogprob": 0.05544,
+          "kl_top20_mean": 0.001518,
+          "cos_logprob_mean": 0.999955,
+          "n_seqs": 17,
+          "shapes": [
+            "(1,8192)",
+            "(4,8192)",
+            "(8,8192)",
+            "(16,8192)",
+            "(32,8192)"
+          ],
+          "batch_invariance": {
+            "8x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.09709
+            },
+            "16x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.09709
+            },
+            "32x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.09709
+            }
+          }
+        }
+      },
+      "by_config": [
+        {
+          "batch_size": 1,
+          "seq_len": 8192,
+          "total_tokens": 8192,
+          "v6e_e2e_p50_ms": 33.333,
+          "v6e_e2e_p99_ms": 34.055,
+          "v6e_tokens_per_s": 245537.5,
+          "tpu7x_e2e_p50_ms": 21.493,
+          "tpu7x_e2e_p99_ms": 23.952,
+          "tpu7x_tokens_per_s": 379892.5
+        },
+        {
+          "batch_size": 4,
+          "seq_len": 8192,
+          "total_tokens": 32768,
+          "v6e_e2e_p50_ms": 118.844,
+          "v6e_e2e_p99_ms": 119.799,
+          "v6e_tokens_per_s": 275573.8,
+          "tpu7x_e2e_p50_ms": 69.122,
+          "tpu7x_e2e_p99_ms": 70.599,
+          "tpu7x_tokens_per_s": 473979.8
+        },
+        {
+          "batch_size": 8,
+          "seq_len": 8192,
+          "total_tokens": 65536,
+          "v6e_e2e_p50_ms": 233.941,
+          "v6e_e2e_p99_ms": 235.608,
+          "v6e_tokens_per_s": 280017.4,
+          "tpu7x_e2e_p50_ms": 132.965,
+          "tpu7x_e2e_p99_ms": 134.783,
+          "tpu7x_tokens_per_s": 492742.9
+        },
+        {
+          "batch_size": 16,
+          "seq_len": 8192,
+          "total_tokens": 131072,
+          "v6e_e2e_p50_ms": 461.3,
+          "v6e_e2e_p99_ms": 464.255,
+          "v6e_tokens_per_s": 284343.4,
+          "tpu7x_e2e_p50_ms": 259.695,
+          "tpu7x_e2e_p99_ms": 262.342,
+          "tpu7x_tokens_per_s": 504528.8
+        },
+        {
+          "batch_size": 32,
+          "seq_len": 8192,
+          "total_tokens": 262144,
+          "v6e_e2e_p50_ms": 914.907,
+          "v6e_e2e_p99_ms": 918.256,
+          "v6e_tokens_per_s": 286563.5,
+          "tpu7x_e2e_p50_ms": 515.504,
+          "tpu7x_e2e_p99_ms": 521.388,
+          "tpu7x_tokens_per_s": 508224.4
+        }
+      ]
+    },
+    "MiniCPM5-2B": {
+      "model_id": "openbmb/MiniCPM5-2B",
+      "v6e_accuracy": {
+        "fp32_golden": {
+          "gate_v2": "PASS",
+          "top1_agreement": 0.9412,
+          "top1_agreement_nolp": 0.9412,
+          "top1_tie_aware": 1.0,
+          "top1_tie_aware_nolp": 1.0,
+          "mean_abs_dlogprob": 0.04051,
+          "kl_top20_mean": 0.001451,
+          "cos_logprob_mean": 0.999967,
+          "n_seqs": 17,
+          "shapes": [
+            "(1,8192)",
+            "(4,8192)",
+            "(8,8192)",
+            "(16,8192)",
+            "(32,8192)"
+          ],
+          "batch_invariance": {
+            "8x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "16x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "32x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            }
+          }
+        },
+        "bf16_reference": {
+          "gate_v2": "PASS",
+          "top1_agreement": 0.9412,
+          "top1_agreement_nolp": 0.9412,
+          "top1_tie_aware": 1.0,
+          "top1_tie_aware_nolp": 1.0,
+          "mean_abs_dlogprob": 0.0493,
+          "kl_top20_mean": 0.002098,
+          "cos_logprob_mean": 0.999951,
+          "n_seqs": 17,
+          "shapes": [
+            "(1,8192)",
+            "(4,8192)",
+            "(8,8192)",
+            "(16,8192)",
+            "(32,8192)"
+          ],
+          "batch_invariance": {
+            "8x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "16x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "32x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            }
+          }
+        }
+      },
+      "tpu7x_accuracy": {
+        "fp32_golden": {
+          "gate_v2": "PASS",
+          "top1_agreement": 1.0,
+          "top1_agreement_nolp": 1.0,
+          "top1_tie_aware": 1.0,
+          "top1_tie_aware_nolp": 1.0,
+          "mean_abs_dlogprob": 0.05016,
+          "kl_top20_mean": 0.001782,
+          "cos_logprob_mean": 0.999954,
+          "n_seqs": 17,
+          "shapes": [
+            "(1,8192)",
+            "(4,8192)",
+            "(8,8192)",
+            "(16,8192)",
+            "(32,8192)"
+          ],
+          "batch_invariance": {
+            "8x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "16x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "32x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            }
+          }
+        },
+        "bf16_reference": {
+          "gate_v2": "PASS",
+          "top1_agreement": 1.0,
+          "top1_agreement_nolp": 1.0,
+          "top1_tie_aware": 1.0,
+          "top1_tie_aware_nolp": 1.0,
+          "mean_abs_dlogprob": 0.05038,
+          "kl_top20_mean": 0.002032,
+          "cos_logprob_mean": 0.99995,
+          "n_seqs": 17,
+          "shapes": [
+            "(1,8192)",
+            "(4,8192)",
+            "(8,8192)",
+            "(16,8192)",
+            "(32,8192)"
+          ],
+          "batch_invariance": {
+            "8x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "16x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            },
+            "32x8192": {
+              "same_top1": true,
+              "max_abs_dlogprob_vs_batch4": 0.0
+            }
+          }
+        }
+      },
+      "by_config": [
+        {
+          "batch_size": 1,
+          "seq_len": 8192,
+          "total_tokens": 8192,
+          "v6e_e2e_p50_ms": 69.216,
+          "v6e_e2e_p99_ms": 69.759,
+          "v6e_tokens_per_s": 118365.7,
+          "tpu7x_e2e_p50_ms": 48.049,
+          "tpu7x_e2e_p99_ms": 48.725,
+          "tpu7x_tokens_per_s": 170676.1
+        },
+        {
+          "batch_size": 4,
+          "seq_len": 8192,
+          "total_tokens": 32768,
+          "v6e_e2e_p50_ms": 244.901,
+          "v6e_e2e_p99_ms": 245.571,
+          "v6e_tokens_per_s": 133793.5,
+          "tpu7x_e2e_p50_ms": 161.261,
+          "tpu7x_e2e_p99_ms": 162.939,
+          "tpu7x_tokens_per_s": 203019.6
+        },
+        {
+          "batch_size": 8,
+          "seq_len": 8192,
+          "total_tokens": 65536,
+          "v6e_e2e_p50_ms": 486.296,
+          "v6e_e2e_p99_ms": 488.757,
+          "v6e_tokens_per_s": 134728.0,
+          "tpu7x_e2e_p50_ms": 313.854,
+          "tpu7x_e2e_p99_ms": 316.042,
+          "tpu7x_tokens_per_s": 208811.8
+        },
+        {
+          "batch_size": 16,
+          "seq_len": 8192,
+          "total_tokens": 131072,
+          "v6e_e2e_p50_ms": 964.738,
+          "v6e_e2e_p99_ms": 968.052,
+          "v6e_tokens_per_s": 135875.9,
+          "tpu7x_e2e_p50_ms": 620.855,
+          "tpu7x_e2e_p99_ms": 623.292,
+          "tpu7x_tokens_per_s": 211102.3
+        },
+        {
+          "batch_size": 32,
+          "seq_len": 8192,
+          "total_tokens": 262144,
+          "v6e_e2e_p50_ms": 1922.613,
+          "v6e_e2e_p99_ms": 1925.921,
+          "v6e_tokens_per_s": 136368.6,
+          "tpu7x_e2e_p50_ms": 1237.199,
+          "tpu7x_e2e_p99_ms": 1243.338,
+          "tpu7x_tokens_per_s": 211825.7
+        }
+      ]
+    }
+  }
+}

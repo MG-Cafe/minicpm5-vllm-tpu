@@ -1,0 +1,10 @@
+minicpm5_mk/__init__.py,sha256=kG4HRrlffzCzCqTyKc0rShteyU1MuawPOypcoW-cyOo,11518
+minicpm5_mk/mk_attn.py,sha256=gqO3GDnsjFnd4_SbG-nFTNmuy8BGzMd7Fjhl_OOedhg,34483
+minicpm5_mk/mk_jax.py,sha256=nbBqmNUpSJ0qAV0K75A8R_jygGmAWLglf5P8hatkcr0,37296
+minicpm5_mk/mk_mlp.py,sha256=QljwUVQrH7UamGb_9-nSwrOaQIHpFYqQ2spzI9v8KBk,8814
+minicpm5_mk/mk_weights.py,sha256=NatNvLKFwo9W1voSNvnLimnipbbLc8iuTz4tCsF-II0,14317
+minicpm5_mk/model.py,sha256=2k446N35dP5rxPpy66ItPNn5z08ai4rfjDZ0_4NR4E4,39234
+minicpm5_mk-0.1.0.dist-info/METADATA,sha256=Dz8CZVX04jRmWmm5pv2Ja6UwH663ALKU9aoSOlSQmR8,145
+minicpm5_mk-0.1.0.dist-info/entry_points.txt,sha256=dmWSu6zOL8esvjX7p1QkGcG23QBRWhW8M2p56bIOHDA,58
+minicpm5_mk-0.1.0.dist-info/top_level.txt,sha256=oTcn1KsDNTmWexyyXKMAYBLHA7Xw6kBSyaRnVeKE1f8,12
+minicpm5_mk-0.1.0.dist-info/RECORD,,

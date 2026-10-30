@@ -1,0 +1,2 @@
+[vllm.general_plugins]
+minicpm5_mk = minicpm5_mk:register
